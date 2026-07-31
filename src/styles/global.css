@@ -151,3 +151,14 @@ footer{
   .num{padding-top:0; margin-bottom:.7rem}
 }
 @media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+
+/* ---------- frases longas (poemas, monólogos) ---------- */
+.quote-hero{ white-space: pre-line; }
+.quote{
+  white-space: pre-line;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  line-clamp: 8;
+  overflow: hidden;
+}
