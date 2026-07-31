@@ -1,0 +1,8 @@
+# Configuração de publicação no Netlify.
+# Você não precisa mexer aqui — o Netlify lê este arquivo sozinho.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"

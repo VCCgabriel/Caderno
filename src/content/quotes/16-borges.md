@@ -1,0 +1,6 @@
+---
+number: 16
+author: Jorge Luis Borges
+quote: >-
+  To fall in love is to create a religion that has a fallible god.
+---

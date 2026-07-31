@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" role="img" aria-label="Ilustração de exemplo">
+  <rect width="1000" height="620" fill="#E4E2D8"/>
+  <g fill="none" stroke="#1E2531" stroke-opacity="0.5" stroke-width="1.4">
+    <path d="M120 470 C 260 380, 300 300, 380 250 S 560 210, 640 150"/>
+    <path d="M120 500 C 280 420, 340 340, 430 300 S 620 260, 720 200"/>
+    <path d="M120 530 C 300 470, 400 420, 500 390 S 700 340, 820 280"/>
+  </g>
+  <circle cx="700" cy="180" r="46" fill="none" stroke="#7E2B36" stroke-width="2"/>
+  <line x1="120" y1="560" x2="880" y2="560" stroke="#1E2531" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="120" y="600" font-family="Georgia, serif" font-style="italic" font-size="22" fill="#4E5766">imagem de exemplo — troque pela sua</text>
+</svg>

@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const quotes = (await getCollection('quotes')).sort(
+  (a, b) => a.data.number - b.data.number
+);
+---
+
+<Base title="Caderno" section="frases">
+  <section class="collection">
+    {
+      quotes.map((entry) => {
+        const hasNote = entry.body.trim().length > 0;
+        return (
+          <a class="entry" href={`/quotes/${entry.slug}/`}>
+            <div class="num">{String(entry.data.number).padStart(2, '0')}</div>
+            <div>
+              <p class="quote">{entry.data.quote}</p>
+              <p class="cite">
+                <span class="who">{entry.data.author}</span>
+                {entry.data.work ? <span>, <span class="work">{entry.data.work}</span></span> : null}
+              </p>
+              {hasNote ? <span class="has-note">ler nota →</span> : null}
+            </div>
+          </a>
+        );
+      })
+    }
+  </section>
+</Base>

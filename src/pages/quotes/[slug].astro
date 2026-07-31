@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const quotes = await getCollection('quotes');
+  return quotes.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const hasNote = entry.body.trim().length > 0;
+---
+
+<Base title={`${entry.data.author} — Caderno`} section="frases">
+  <a class="back" href="/">← Frases</a>
+  <article class="quote-page">
+    <div class="num-lg">{String(entry.data.number).padStart(2, '0')}</div>
+    <blockquote class="quote-hero">{entry.data.quote}</blockquote>
+    {entry.data.translation ? <p class="translation">{entry.data.translation}</p> : null}
+    <p class="cite-lg">
+      <span class="who">{entry.data.author}</span>
+      {entry.data.work ? <span>, <span class="work">{entry.data.work}</span></span> : null}
+    </p>
+    {
+      hasNote ? (
+        <div class="commentary">
+          <Content />
+        </div>
+      ) : null
+    }
+  </article>
+</Base>
