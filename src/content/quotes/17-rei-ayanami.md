@@ -64,4 +64,4 @@ quote: |
   Quem é você?
   Quem é você?
 ---
-![](/images/Rei.jpg)
+![](/images/Rei.png)
